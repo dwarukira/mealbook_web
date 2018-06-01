@@ -80,5 +80,11 @@
     .login_image{
         display: none;
     }
+
+    .login_card{
+        display: flex;
+        max-width: 30rem;
+        min-height: 30rem;
+    }
 }
     

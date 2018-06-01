@@ -10,7 +10,9 @@ export class Login extends Component {
     }
 
     handleChange = (e) =>{
-        this.setState({[e.target.name]:e.target.value})        
+        this.setState({[e.target.name]:e.target.value})      
+        console.log(this.state);
+          
     }
 
     handleSubmit = (e) => {
@@ -40,7 +42,7 @@ export class Login extends Component {
                     </div>
 
                     <div className={styles.login_form}>
-                        <form>
+                        <form onSubmit={this.handleSubmit}> 
                         <h3 className={styles.login_h3}> Hi. nice to see you! </h3>
                         <div className="field ">
                             <label className="label">Username</label>
@@ -75,7 +77,7 @@ export class Login extends Component {
 
                         <div className="field">
                             <p className="control">
-                                <button className="button is-success">Login</button>
+                                <button className="button is-success" type="submit">Login</button>
                             </p>
                         </div>
                         </form>
