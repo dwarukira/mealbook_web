@@ -1,0 +1,84 @@
+.login_container{
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    flex: 1 0 auto;
+    padding: 3rem;
+    /* min-width: 84rem; */
+}
+
+.login_card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 80rem;
+    min-height: 30rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(150, 159, 171, 0.5) 4px 7px 19px 10px;
+    border-radius: 0.6rem;
+    box-sizing: inherit;
+}
+
+
+.login_card__heading{
+    color: rgb(72, 72, 72);
+    font-size: 2.4rem;
+    font-weight: 400;
+    height: 5.7rem;
+    margin: 0px;
+    padding: 1.5rem 2.5rem;
+}
+
+
+.form{
+    display: flex;
+    flex: 1 1 0%;
+    border-radius: 0px 0px 0.6rem 0.6rem;
+}
+
+.login_image{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 0px 6px;
+    border-top: 3px solid rgb(247, 247, 247);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 33.6rem;
+    flex: 1 1 0%;
+    padding: 3rem;
+    
+}
+
+
+.login_form {
+    background-color: rgb(247, 247, 247);
+    border-radius: 0px 0px 6px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 33.6rem;
+    flex: 1 1 0%;
+    padding: 3rem;
+}
+
+.login_h3{
+    margin-top: 0px;
+    margin-bottom: 5.5rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.07rem;
+    color: rgb(10, 175, 196);
+}
+
+
+@media only screen and (max-device-width : 640px) {
+    .login_image{
+        display: none;
+    }
+}
+    
