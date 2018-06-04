@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Nav from "../components/NavBar"
 
 export class App extends Component {
   static propTypes = {
@@ -8,16 +9,19 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
-        
-      </div>
+      <React.Fragment>
+      		<Nav />
+          <div className="container">
+            {this.props.children}
+          </div>
+      </React.Fragment>
     )
   }
 }
 
 
 App.propTypes = {
-    classes: PropTypes.object
+    classNamees: PropTypes.object
 }
 
 export default App

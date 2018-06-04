@@ -1,5 +1,5 @@
 import { TOKEN, SIGNUP_URI, LOGIN_URI } from "./constants"
-
+import  jwt from "jsonwebtoken";
 // Provides an api abstraction for mealbook 
 export class API{
     get token(){
@@ -13,7 +13,8 @@ export class API{
     // Check if logged in
     loggedIn(){
         // TODO: check if token is experied
-        const token = localStorage.getItem(TOKEN)
+        const token = this.token
+        console.log(jwt.decode(token))
         return !!token
     }
     

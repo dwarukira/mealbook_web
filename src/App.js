@@ -6,8 +6,8 @@ class App extends Component {
   render() {
     return (
       <Switch>
-          <Route path="/" exact component={AppRoutes}/>
           <Route path={`/auth`} component={AuthRoutes}/>
+          <Route path="/"  component={AppRoutes}/>
       </Switch>
     );
   }
