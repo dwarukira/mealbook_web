@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 import { orders } from "./orders"
-
+import { meals } from "./meals";
 const cart = (state = [] , action) =>{
     switch(action.type){
         case 'ADD_CART':
@@ -21,5 +21,6 @@ const cart = (state = [] , action) =>{
 
 export default combineReducers({
     cart,
-    orders
+    orders,
+    meals
 })

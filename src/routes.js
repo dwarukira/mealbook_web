@@ -3,16 +3,21 @@ import { Route  } from "react-router-dom"
 import { App } from "./pages/App";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
-import MenuList from "./pages/MenuList";
+import MenuList  from "./pages/MenuList";
 import Orders  from "./pages/Orders";
+import  MealList  from "./pages/MealList";
+import AddMeal from "./pages/AddMeal";
 
 export const DashBoard = (props) => {
-    const { match } = props
-    console.log(match);
+    const { url } = props.match
     
     return (
         <React.Fragment>
-
+            <App>
+             <Route path={`${url}`} exact component={MealList}/>
+             <Route path={`${url}/add`} exact component={AddMeal}/> 
+              
+            </App>
         </React.Fragment>
     )
 }

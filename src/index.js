@@ -8,6 +8,8 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import rootReducer from "./reducers"
 
+import "./index.css"
+
 const store = createStore(
     rootReducer,
     compose(

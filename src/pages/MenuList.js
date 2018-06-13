@@ -8,6 +8,7 @@ import { MenuItem } from '../components/MenuItem';
 import { addCart } from "../actions"
 
 import styles from "./css/menulist.css"
+import { Cart } from '../components/Cart';
 
 class MenuList extends Component {
   
@@ -35,8 +36,9 @@ class MenuList extends Component {
     ))
     return (
     <div className={`columns ${styles.columns}`}>
-        {menu}
-      </div>
+      <Cart cart={this.props.cart} />
+      {menu}
+    </div>
     )
   }
 }
