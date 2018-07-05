@@ -1,4 +1,11 @@
-import { FETCH_MEALS_BEGIN, FETCH_MEALS_SUCCESS, FETCH_MEALS_FAILURE } from "./types";
+import { 
+    FETCH_MEALS_BEGIN, 
+    FETCH_MEALS_SUCCESS, 
+    FETCH_MEALS_FAILURE,
+    FETCH_MEAL_BEGIN, 
+    FETCH_MEAL_SUCCESS, 
+    FETCH_MEAL_FAILURE 
+} from "./types";
 import { API } from "../api";
 import { MEALLIST_URI, ADDMENU_URI, MEAL_URI } from "../constants";
 
@@ -19,6 +26,20 @@ export const getMealsError = (error) => ({
 })
 
 
+export const getMealBegin = () => ({
+	type:FETCH_MEAL_BEGIN
+})
+
+export const getMealSuccess = (meal) => ({
+	type:FETCH_MEAL_SUCCESS,
+	payload:{meal}
+})
+
+export const getMealError = (error) => ({
+	type:FETCH_MEAL_FAILURE,
+	payload: { error }
+})
+
 export const getMeals = () =>{
     return dispatch => {
         dispatch(getMealsBegin());
@@ -28,6 +49,21 @@ export const getMeals = () =>{
             return data
         }).catch(error => {
             dispatch(getMealsError(error))
+        })
+    }
+}
+
+
+export const getMeal = (meal_id) =>{
+    return dispatch => {
+        dispatch(getMealBegin());
+        let service = new API()
+        return service.api(MEAL_URI+"/"+meal_id).then(data => {
+            dispatch(getMealSuccess(data))
+            
+            return data
+        }).catch(error => {
+            dispatch(getMealError(error))
         })
     }
 }

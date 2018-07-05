@@ -1,18 +1,24 @@
 import React from "react"
+import "./css/menu.css"
 
 
 export const MenuItem = (props) => {
     const { meal } = props.meal
+    console.log(meal);
+    
     function addcart(){
 		props.addCart(meal, 1)
     }
 
+    function remove(){
+        props.remove(meal)
+    }
     return (
         <div className="column is-2 is-mobile">
             <div className="card">
-                <div className="card-image">
-                    <figure className="image is-2by1">
-                        <img src={meal.photo} alt={meal.name} />
+                <div className="">
+                    <figure className="image" >
+                        {/* <img src={meal.photo} alt={meal.name}/> */}
                     </figure>
                 </div>
             <div className="card-content">
@@ -23,7 +29,8 @@ export const MenuItem = (props) => {
                 </div>
                 </div>
                 <footer className="card-footer">
-                    <a onClick={addcart} className="card-footer-item">Add to cart</a>
+                    <button onClick={addcart} className="card-footer-item">Add to cart</button>
+                    <button onClick={remove} className="">Remove</button>
                 </footer>
             </div>
             </div>

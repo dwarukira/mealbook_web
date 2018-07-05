@@ -31,9 +31,35 @@ class MealList extends Component {
     ))
 
     return (
-      <div className={styles}> 
+      <div className='grid'> 
         <Link to={`/d/add`}> Add </Link>
-        {meallist}
+        <div className={`columns ${styles.columns}`}>
+    
+      <div className="card">
+        <div className="card-title">
+          <h4>Meals</h4>
+        </div>
+        <div className="card-body">
+          <div className="table-responsive table-bordered table-striped">
+              <table className="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>by</th>
+                        <th>Posted on</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {meallist}
+                </tbody>
+              </table>
+          </div>
+    </div>
+    </div>
+    </div>
       </div>
     )
   }

@@ -1,0 +1,16 @@
+.image {
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* .image img {
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 0px 6px;
+    border-top: 3px solid rgb(247, 247, 247);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 33.6rem;
+    flex: 1 1 0%;
+    padding: 3rem;
+} */

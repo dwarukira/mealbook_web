@@ -7,17 +7,20 @@ import MenuList  from "./pages/MenuList";
 import Orders  from "./pages/Orders";
 import  MealList  from "./pages/MealList";
 import AddMeal from "./pages/AddMeal";
+import   DB  from "./pages/DashBoard";
+import MealEdit from "./pages/MealEdit";
 
 export const DashBoard = (props) => {
     const { url } = props.match
     
     return (
         <React.Fragment>
-            <App>
+            <DB>
              <Route path={`${url}`} exact component={MealList}/>
              <Route path={`${url}/add`} exact component={AddMeal}/> 
-              
-            </App>
+             <Route path={`${url}/edit/:id`} exact component={MealEdit}/> 
+
+            </DB>
         </React.Fragment>
     )
 }
@@ -42,9 +45,9 @@ export const AuthRoutes = (props) => {
     console.log(props);
     
     return (
-        <React.Fragment>
+        <div className="container">
             <Route path={`${match.url}/login`} exact component={Login} />
             <Route path={`${match.url}/register`} exact component={Register} />
-        </React.Fragment>
+        </div>
     )
 }

@@ -1,18 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import { addMeal } from '../actions/meals';
-import { FILE_UPLOAD } from "../constants";
+import { FILE_UPLOAD, MEAL_URI } from "../constants";
 import "./css/addmeal.css"
+import { API } from '../api';
 
-class AddMeal extends Component {
+class MealEdit extends Component {
   state = {
-    name:"",
-    price:"",
-    photo_url:""
+    meal:{
+        name:"",
+        price:"",
+        photo_url:""
+    },
+    loading:false,
+    error:null
   }
 
   componentWillMount(){
-
+      this.setState({loading:true})
+      const meal_id = this.props.match.params.id
+      let service = new API()
+      service.api(MEAL_URI+"/"+meal_id).then(res => {
+          this.setState({meal:res, loading:false})
+      }).catch(err => {
+        this.setState({error:err, loading:false})
+      })
   }
   
   handleChange = (e) => {
@@ -21,7 +32,15 @@ class AddMeal extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.dispatch(addMeal(this.state))
+    const meal_id = this.props.match.params.id
+
+    let service = new API()
+    service.api(MEAL_URI+"/"+meal_id, {
+        method:"PUT",
+        body:JSON.stringify(this.state)
+    }).then(res => {
+        this.props.history.push("/d")
+    })
   }
 
   uploadfiles = e => {                                  
@@ -41,8 +60,30 @@ class AddMeal extends Component {
                                                                       
 }   
   render() {
-    console.log(this.props);
-    
+    if(this.state.loading){
+        return (
+            <div>
+                loading....
+            </div>
+        )
+    }
+    if(this.state.error){
+        if(this.state.error.response.status === 404){
+              
+        return (
+            <div>
+               404
+            </div>
+        )
+        }
+
+        return (
+            <div>
+                Someerror happend
+            </div>
+        )
+    }
+
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
@@ -51,7 +92,7 @@ class AddMeal extends Component {
         <input type="name" 
           className="form-control" 
           id="name"
-          value={this.state.name} 
+          value={this.state.meal.name} 
           onChange={this.handleChange}
           aria-describedby="name" 
           name="name"
@@ -62,14 +103,14 @@ class AddMeal extends Component {
         <label htmlFor="price">Price</label>
         <input type="number" 
           className="form-control" 
-          value={this.state.price} 
+          value={this.state.meal.price} 
           onChange={this.handleChange}
           id="price" 
           name="price"
           placeholder="Price"/>
       </div>
       <div className="img">
-        <img src={this.state.photo_url} alt="" className="rounded-circle" />
+        <img src={this.state.meal.photo_url} alt="" className="rounded-circle" />
       </div>
       <div className="form-group">
         <label htmlFor="photo">Photo</label>
@@ -89,6 +130,7 @@ class AddMeal extends Component {
 }
 
 
+  
 
-export default connect()(AddMeal)
+export default connect()(MealEdit)
 
