@@ -25,7 +25,11 @@ export const Meal = (props) => {
       <td>{meal.price}</td>    
       <td className="color-primary">{meal.caterer.username}</td>
       <td>{new Date(meal.posted_on).toLocaleDateString() }</td>
-      <td><button className="btn" onClick={addToMenu}>Add</button></td>
+      <td>
+        <Link className="btn" to={`/d/meal/`+meal.id}>View</Link>
+        <button className="btn" onClick={addToMenu}>Add</button>
+        <Link className="btn" to={`/d/meal/edit/`+meal.id}>Edit</Link>
+        </td>
        
   </tr>
   )

@@ -1,5 +1,5 @@
 import React from "react"
-import "./css/menu.css"
+import style from "./css/menu.css"
 
 
 export const MenuItem = (props) => {
@@ -14,25 +14,15 @@ export const MenuItem = (props) => {
         props.remove(meal)
     }
     return (
-        <div className="column is-2 is-mobile">
-            <div className="card">
-                <div className="">
-                    <figure className="image" >
-                        {/* <img src={meal.photo} alt={meal.name}/> */}
-                    </figure>
+        <div className={`card `+ style.image}>
+            <img className="card-img-top" src={meal.photo} alt=""/>
+            <div className="card-body">
+                <h5 className="card-title">{meal.name}</h5>
+                <p className="card-text">KSH {meal.price}</p>
+                <div>
+                    <button onClick={addcart} className="btn btn-primary">Add to cart</button>
+                    {/* <button onClick={remove} className="btn btn-primary">Remove</button> */}
                 </div>
-            <div className="card-content">
-                <div className="media">
-                <div className="media-content">
-                    <p className="title is-4">{meal.name}</p>
-                    <p className="subtitle is-6">{meal.price}</p>
-                </div>
-                </div>
-                <footer className="card-footer">
-                    <button onClick={addcart} className="card-footer-item">Add to cart</button>
-                    <button onClick={remove} className="">Remove</button>
-                </footer>
-            </div>
             </div>
         </div>
     )

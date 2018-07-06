@@ -1,16 +1,11 @@
 .image {
-    background-size: cover;
-    overflow: hidden;
+    max-width: 15rem;
+    margin: 2rem;
 }
 
-/* .image img {
-    background-color: rgb(255, 255, 255);
-    border-radius: 0px 0px 0px 6px;
+.image img {
     border-top: 3px solid rgb(247, 247, 247);
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    min-height: 33.6rem;
-    flex: 1 1 0%;
-    padding: 3rem;
-} */
+    max-width: 15rem;
+    max-height: 15rem;
+}
+

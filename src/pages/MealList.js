@@ -31,8 +31,7 @@ class MealList extends Component {
     ))
 
     return (
-      <div className='grid'> 
-        <Link to={`/d/add`}> Add </Link>
+      <div className='grid'>
         <div className={`columns ${styles.columns}`}>
     
       <div className="card">

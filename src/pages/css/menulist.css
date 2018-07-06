@@ -1,4 +1,4 @@
-.columns{
-    align-self: center;
+.menu {
+    display: flex;
+    flex-direction: row;
 }
-
