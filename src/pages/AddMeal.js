@@ -7,7 +7,7 @@ import "./css/addmeal.css"
 class AddMeal extends Component {
   state = {
     name:"",
-    price:"",
+    price:"", 
     photo_url:""
   }
 

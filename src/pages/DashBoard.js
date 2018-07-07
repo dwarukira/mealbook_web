@@ -4,17 +4,17 @@ import { AdminNav } from "../components/NavBar"
 export default class DashBoard extends Component {
   render() {
     return (
-      <div className="">
+      <React.Fragment>
         <div className="">
          <AdminNav />          
         </div>
         <div className="">
 
         </div>
-        <div className="container">
+        <div className="container class">
          {this.props.children}
-         </div>
-      </div>
+        </div>
+      </React.Fragment>
     )
   }
 }

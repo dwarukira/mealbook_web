@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { orders } from "./orders"
+import { orders, all_orders } from "./orders"
 import { meals , meal} from "./meals";
 import { 
     FETCH_MENU_BEGIN, 
@@ -53,6 +53,7 @@ const menu = (state = initialState, action) => {
 export default combineReducers({
     cart,
     orders,
+    all_orders,
     meals,
     menu,
     meal

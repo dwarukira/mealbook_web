@@ -10,6 +10,7 @@ import AddMeal from "./pages/AddMeal";
 import   DB  from "./pages/DashBoard";
 import MealEdit from "./pages/MealEdit";
 import MealDetails from "./pages/MealDetails";
+import AdminOrders from "./pages/AdminOrders";
 
 export const DashBoard = (props) => {
     const { url } = props.match
@@ -22,6 +23,7 @@ export const DashBoard = (props) => {
              <Route path={`${url}/meal/edit/:id`} exact component={MealEdit}/> 
              <Route path={`${url}/meal/:id`} exact component={MealDetails}/> 
              <Route path={`${url}/menu`} exact component={MenuList}/> 
+             <Route path={`${url}/orders`} exact component={AdminOrders}/>
             </DB>
         </React.Fragment>
     )

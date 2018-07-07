@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 import style from "./css/order.css"
 
 export class Order extends Component {
+  fullfill = () => {
+    this.props.fullfill(this.props.order.id)
+  }
   render() {
     console.log(this.props.order);
     
@@ -26,6 +29,9 @@ export class Order extends Component {
           <div className={style.time}> 
             <p> Date {new Date(this.props.order.posted_on).toLocaleDateString() }</p>
             <p> Time {new Date(this.props.order.posted_on).toLocaleTimeString() }</p>
+            {(this.props.admin) ?  <td> <button className="btn btn-primary" onClick={this.fullfill}> Fullfill</button></td> :
+                    ""
+              }
           </div>
         </div>
         <div className="card-body">
@@ -37,6 +43,7 @@ export class Order extends Component {
                   <th>Meal Name</th>
                   <th>Quantiy</th>
                   <th>Price</th>
+                  
                 </tr>
               </thead>
               <tbody className="">  
