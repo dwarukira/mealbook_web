@@ -11,8 +11,10 @@ class AddMeal extends Component {
     photo_url:""
   }
 
-  componentWillMount(){
-
+  componentWillReceiveProps(nextProps){
+    if(nextProps.addmeal.added){
+      this.props.history.push('/d');
+    }
   }
   
   handleChange = (e) => {
@@ -33,7 +35,6 @@ class AddMeal extends Component {
     }).then(res => {                                                  
         return res.json().then(data =>{                                                                               
             this.setState({photo_url:data.url})
-
         })                                                            
     }).catch(err => {                                                 
        console.log(err);                                      
@@ -41,8 +42,6 @@ class AddMeal extends Component {
                                                                       
 }   
   render() {
-    console.log(this.props);
-    
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
@@ -89,6 +88,10 @@ class AddMeal extends Component {
 }
 
 
+const mapPropsToState = (state) => ({
+  addmeal:state.addmeal
 
-export default connect()(AddMeal)
+})
+
+export default connect(mapPropsToState)(AddMeal)
 

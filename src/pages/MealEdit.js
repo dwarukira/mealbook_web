@@ -11,6 +11,9 @@ class MealEdit extends Component {
         price:"",
         photo_url:""
     },
+    name:"",
+    price:"",
+    photo_url:"",
     loading:false,
     error:null
   }
@@ -20,14 +23,14 @@ class MealEdit extends Component {
       const meal_id = this.props.match.params.id
       let service = new API()
       service.api(MEAL_URI+"/"+meal_id).then(res => {
-          this.setState({meal:res, loading:false})
+          this.setState({name:res.name, price:res.price, photo_url:res.photo_url, loading:false})
       }).catch(err => {
         this.setState({error:err, loading:false})
       })
   }
   
   handleChange = (e) => {
-    this.setState({[e.target.name]:e.target.value})
+    this.setState({[e.target.name]:e.target.value})    
   }
 
   handleSubmit = (e) => {
@@ -92,7 +95,7 @@ class MealEdit extends Component {
         <input type="name" 
           className="form-control" 
           id="name"
-          value={this.state.meal.name} 
+          value={this.state.name} 
           onChange={this.handleChange}
           aria-describedby="name" 
           name="name"
@@ -103,14 +106,14 @@ class MealEdit extends Component {
         <label htmlFor="price">Price</label>
         <input type="number" 
           className="form-control" 
-          value={this.state.meal.price} 
+          value={this.state.price} 
           onChange={this.handleChange}
           id="price" 
           name="price"
           placeholder="Price"/>
       </div>
       <div className="img">
-        <img src={this.state.meal.photo_url} alt="" className="rounded-circle" />
+        <img src={this.state.photo_url} alt="" className="rounded-circle" />
       </div>
       <div className="form-group">
         <label htmlFor="photo">Photo</label>
@@ -122,7 +125,7 @@ class MealEdit extends Component {
           placeholder="Password"/>
       </div>
 
-      <button type="submit" className="btn btn-primary">Add</button>
+      <button type="submit" className="btn btn-primary">Update</button>
     </form>
       </div>
     )

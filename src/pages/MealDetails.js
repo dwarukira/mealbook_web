@@ -12,10 +12,9 @@ class MealDetails extends Component{
         loading:false,
         error:null
     }
+   
     componentWillMount(){
-        if(!this.state.meal){
-            console.log(this.state);
-            
+        if(!this.state.meal){ 
             this.setState({loading:true})
             const meal_id = this.props.match.params.id
             let service =  new API()
@@ -120,12 +119,12 @@ class MealDetails extends Component{
                 </div>
             </div>
 
-            <div class="modal fade" id="remove" tabIndex="-1" role="dialog" aria-labelledby="#remove" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Are you sure you want to delete {this.state.meal.name}?.</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div className="modal fade" id="remove" tabIndex="-1" role="dialog" aria-labelledby="#remove" aria-hidden="true">
+            <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLongTitle">Are you sure you want to delete {this.state.meal.name}?.</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -133,8 +132,8 @@ class MealDetails extends Component{
                     Removing this meal my have side effects. Are you sure you want to continue.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger" onClick={this.handleDelete}>Save changes</button>
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" className="btn btn-danger" onClick={this.handleDelete}>Save changes</button>
                 </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AdminNav } from "../components/NavBar"
+import  {AdminNav} from "../components/NavAdmin"
 
 export default class DashBoard extends Component {
   render() {

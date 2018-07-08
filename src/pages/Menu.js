@@ -40,7 +40,6 @@ class Menu extends Component {
     ))
     return (
     <div className={`columns ${styles.columns}`}>
-        <Cart cart={this.props.cart} />
           <h4>Meals</h4>
           <div className={styles.menu}>
             {menu}

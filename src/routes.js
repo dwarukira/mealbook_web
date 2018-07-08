@@ -19,9 +19,9 @@ export const DashBoard = (props) => {
         <React.Fragment>
             <DB>
              <Route path={`${url}`} exact component={MealList}/>
-             <Route path={`${url}/add`} exact component={AddMeal}/> 
-             <Route path={`${url}/meal/edit/:id`} exact component={MealEdit}/> 
+             <Route path={`${url}/meals/add`} exact component={AddMeal}/> 
              <Route path={`${url}/meal/:id`} exact component={MealDetails}/> 
+             <Route path={`${url}/meal/edit/:id`} exact component={MealEdit}/>
              <Route path={`${url}/menu`} exact component={MenuList}/> 
              <Route path={`${url}/orders`} exact component={AdminOrders}/>
             </DB>

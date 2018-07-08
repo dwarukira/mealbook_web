@@ -35,8 +35,9 @@ class MealList extends Component {
         <div className={`columns ${styles.columns}`}>
     
       <div className="card">
-        <div className="card-title">
+        <div className={`card-title ${styles.title}`}>
           <h4>Meals</h4>
+          <Link className="btn btn-primary" to="/d/meals/add">Add</Link>
         </div>
         <div className="card-body">
           <div className="table-responsive table-bordered table-striped">
