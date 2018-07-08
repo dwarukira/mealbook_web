@@ -10,20 +10,18 @@ export class Register extends Component {
     }
 
     handleChange = (e) =>{
-        this.setState({[e.target.name]:e.target.value})        
+        this.setState({[e.target.name]:e.target.value})    
+     
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state);
-        
+ 
         let api = new API()
         api.signup(this.state).then(res => {
             this.props.history.push("/")
         }).catch(err => {
             if(err.response){
-                console.log(err);
-                
                 err.response.json().then(message => {
                     this.setState({error:message})
                 })

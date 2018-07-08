@@ -17,7 +17,7 @@ class Cart extends React.Component{
         
         return(
             <React.Fragment>
-                <button className="btn btn-primary" onClick={this.checkout}>Check out  <span>{items.length}</span></button>
+                <button className="btn btn-primary" onClick={this.checkout}>Check out<span>{items.length}</span></button>
             </React.Fragment>
         )
     }

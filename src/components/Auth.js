@@ -14,3 +14,17 @@ export const AuthRoute = ({ component: Component, ...rest })  => {
     )
 }
 
+
+export const AdminRoute = ({ component: Component, ...rest })  => {
+    let service = new API()
+
+    return (
+        <Route {...rest} render={props => (
+            service.isAdmin()
+                ? <Component {...props} />
+                : <Redirect to={{ pathname: '/auth/login', state: { from: props.location } }} />
+        )} />
+    )
+}
+
+

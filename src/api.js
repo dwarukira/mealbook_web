@@ -1,5 +1,6 @@
 import { TOKEN, SIGNUP_URI, LOGIN_URI } from "./constants"
 import  jwt from "jsonwebtoken";
+
 // Provides an api abstraction for mealbook 
 export class API{
     get token(){
@@ -17,7 +18,18 @@ export class API{
         console.log(jwt.decode(token))
         return !!token
     }
-    
+
+    isAdmin(){
+        const token = this.token
+        if(this.loggedIn()){
+            const role = jwt.decode(token).identity.role
+            if(role === "SuperAdmin" || role === "Admin"){
+                return true
+            }
+                return false
+        }
+        return false
+    }
     api(url, options){
         // Add headers to fetch 
         const headers = {

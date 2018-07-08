@@ -1,5 +1,6 @@
 import { API } from "../api";
 import { ORDER_USERS_URI, ORDER_URI } from "../constants";
+import { remove } from ".";
 
 export const FETCH_ORDERS_BEGIN   = 'FETCH_ORDERS_BEGIN';
 export const FETCH_ORDERS_SUCCESS = 'FETCH_ORDERS_SUCCESS';
@@ -106,6 +107,10 @@ export const addOrders = (orders) =>{
             method:"POST"
         }).then(data => {
             dispatch(addOrdersSuccess(data))
+            for (let index = 0; index < orders.length; index++) {
+                dispatch(remove(orders[index]))
+                
+            }
             return data
         }).catch(error => {
             error.response.json().then(data=>{
