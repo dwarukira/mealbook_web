@@ -11,9 +11,8 @@ export class MenuItem extends React.Component{
 
 
     addcart = () => {
-        const { meal } = this.props.meal
+        const { meal } = this.props.meal        
         this.props.addCart(meal, this.state.quantiy)
-        this.setState({close:true, quantiy:1})
     }
 
    remove = () => {
@@ -47,7 +46,7 @@ export class MenuItem extends React.Component{
             <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                 <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLongTitle">How many {meal.name} do you want?.</h5>
+                    <h5 className="modal-title" id={`#${meal.id}`}>How many {meal.name} do you want?.</h5>
                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>

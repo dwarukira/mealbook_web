@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-
+import { Link } from "react-router-dom";
 import style from "./css/order.css"
 
 export class Order extends Component {
   fullfill = () => {
     this.props.fullfill(this.props.order.id)
   }
+
   render() {
     console.log(this.props.order);
     
@@ -18,6 +19,9 @@ export class Order extends Component {
               <td>{meal.meal.name}</td>
               <td>{meal.quantity}</td>
               <td><span className="badge badge-primary">ksh {meal.meal.price}</span></td>
+              {(!this.props.admin) ?  <td> <Link className="btn" to={`/orders/edit/${this.props.order.id}`}> Edit</Link></td> :
+                    ""
+              }
           </tr>: <tr key={id}><td>N/A</td></tr>
       ) })
   
@@ -43,7 +47,10 @@ export class Order extends Component {
                   <th>Meal Name</th>
                   <th>Quantiy</th>
                   <th>Price</th>
-                  
+                  {(!this.props.admin) ?  <th>  Actions</th> :
+                    ""
+                  }
+                 
                 </tr>
               </thead>
               <tbody className="">  
