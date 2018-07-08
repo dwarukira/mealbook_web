@@ -24,3 +24,5 @@ export const ADDMENU_URI = `${BASE_URI}/menu`
 export const MEAL_URI=`${BASE_URI}/meal`
 
 export const FILE_UPLOAD= "http://localhost:5000/upload"
+
+export const DASH_BOARD=`${BASE_URI}/dashboard`

@@ -18,7 +18,7 @@ export const AdminNav = (props) => (
 			</div>
 
             <div className={styles.linkitem}>
-				<Link to="/d/dashboard" className={styles.link}>Profits</Link>
+				<Link to="/d/dashboard" className={styles.link}>Dashboard</Link>
 			</div>
 		</nav>
 )
