@@ -1,0 +1,11 @@
+.image {
+    max-width: 15rem;
+    margin: 2rem;
+}
+
+.image img {
+    border-top: 3px solid rgb(247, 247, 247);
+    max-width: 15rem;
+    max-height: 15rem;
+}
+

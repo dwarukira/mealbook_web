@@ -1,0 +1,14 @@
+.time {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title{
+    display: flex;
+    justify-content: space-around;
+    color: var(--secondary);
+}
+
+.card{
+    margin-bottom: 15px;
+}

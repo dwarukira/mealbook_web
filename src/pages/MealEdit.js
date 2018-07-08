@@ -1,29 +1,49 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import { addMeal } from '../actions/meals';
-import { FILE_UPLOAD } from "../constants";
+import { FILE_UPLOAD, MEAL_URI } from "../constants";
 import "./css/addmeal.css"
+import { API } from '../api';
 
-class AddMeal extends Component {
+class MealEdit extends Component {
   state = {
+    meal:{
+        name:"",
+        price:"",
+        photo_url:""
+    },
     name:"",
-    price:"", 
-    photo_url:""
+    price:"",
+    photo_url:"",
+    loading:false,
+    error:null
   }
 
-  componentWillReceiveProps(nextProps){
-    if(nextProps.addmeal.added){
-      this.props.history.push('/d');
-    }
+  componentWillMount(){
+      this.setState({loading:true})
+      const meal_id = this.props.match.params.id
+      let service = new API()
+      service.api(MEAL_URI+"/"+meal_id).then(res => {
+          this.setState({name:res.name, price:res.price, photo_url:res.photo_url, loading:false})
+      }).catch(err => {
+        this.setState({error:err, loading:false})
+      })
   }
   
   handleChange = (e) => {
-    this.setState({[e.target.name]:e.target.value})
+    this.setState({[e.target.name]:e.target.value})    
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.dispatch(addMeal(this.state))
+    const meal_id = this.props.match.params.id
+
+    let service = new API()
+    service.api(MEAL_URI+"/"+meal_id, {
+        method:"PUT",
+        body:JSON.stringify(this.state)
+    }).then(res => {
+        this.props.history.push("/d")
+    })
   }
 
   uploadfiles = e => {                                  
@@ -35,6 +55,7 @@ class AddMeal extends Component {
     }).then(res => {                                                  
         return res.json().then(data =>{                                                                               
             this.setState({photo_url:data.url})
+
         })                                                            
     }).catch(err => {                                                 
        console.log(err);                                      
@@ -42,6 +63,30 @@ class AddMeal extends Component {
                                                                       
 }   
   render() {
+    if(this.state.loading){
+        return (
+            <div>
+                loading....
+            </div>
+        )
+    }
+    if(this.state.error){
+        if(this.state.error.response.status === 404){
+              
+        return (
+            <div>
+               404
+            </div>
+        )
+        }
+
+        return (
+            <div>
+                Someerror happend
+            </div>
+        )
+    }
+
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
@@ -80,7 +125,7 @@ class AddMeal extends Component {
           placeholder="Password"/>
       </div>
 
-      <button type="submit" className="btn btn-primary">Add</button>
+      <button type="submit" className="btn btn-primary">Update</button>
     </form>
       </div>
     )
@@ -88,10 +133,7 @@ class AddMeal extends Component {
 }
 
 
-const mapPropsToState = (state) => ({
-  addmeal:state.addmeal
+  
 
-})
-
-export default connect(mapPropsToState)(AddMeal)
+export default connect()(MealEdit)
 

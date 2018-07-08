@@ -16,7 +16,7 @@ class Orders extends Component {
     this.props.dispatch(changeOrder)
   }
 
-  render() {  
+  render() {
     const orders = this.props.orders.orders.map(order => (
       <Order order={order}  key={order.id} onChange={this.change}/>
     ))
@@ -28,8 +28,8 @@ class Orders extends Component {
       )
     }
     return (
-      <div className="">
-        {orders}
+      <div className="row">
+        {orders}   
       </div>
     )
   }

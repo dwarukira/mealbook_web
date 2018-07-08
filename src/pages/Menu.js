@@ -10,7 +10,7 @@ import { addCart, remove, getMenu } from "../actions"
 import styles from "./css/menulist.css"
 import { Cart } from '../components/Cart';
 
-class MenuList extends Component {
+class Menu extends Component {
   
   state = {
     meals:null
@@ -58,4 +58,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps)(MenuList)
+export default connect(mapStateToProps)(Menu)
