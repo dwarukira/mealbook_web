@@ -19,7 +19,7 @@ export class Order extends Component {
               <td>{meal.meal.name}</td>
               <td>{meal.quantity}</td>
               <td><span className="badge badge-primary">ksh {meal.meal.price}</span></td>
-              {(!this.props.admin) ?  <td> <Link className="btn" to={`/orders/edit/${this.props.order.id}`}> Edit</Link></td> :
+              {(!this.props.admin) ?  <td> <Link className="btn" to={`/orders/edit/${this.props.order.id}/${meal.meal.id}`}> Edit</Link></td> :
                     ""
               }
           </tr>: <tr key={id}><td>N/A</td></tr>
@@ -29,13 +29,16 @@ export class Order extends Component {
       <div className={`col-lg-6 `+ style.card}>
         <div className="card">  
         <div className="card-title">
-          <h4 className={style.title}> Order {this.props.order.id} </h4>
+          <h4 className={style.title}> Order {this.props.order.id}  by  {(this.props.admin) ?  this.props.order.user.username :
+                    ""
+              }</h4>
           <div className={style.time}> 
             <p> Date {new Date(this.props.order.posted_on).toLocaleDateString() }</p>
             <p> Time {new Date(this.props.order.posted_on).toLocaleTimeString() }</p>
             {(this.props.admin) ?  <td> <button className="btn btn-primary" onClick={this.fullfill}> Fullfill</button></td> :
                     ""
               }
+             
           </div>
         </div>
         <div className="card-body">

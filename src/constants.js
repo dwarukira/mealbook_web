@@ -12,6 +12,9 @@ export const ORDER_USERS_URI=`${BASE_URI}/user/orders/history`
 
 export const ORDER_URI=`${BASE_URI}/orders`
 
+export const ORDER_URI_ONE=`${BASE_URI}/order`
+
+
 export const ORDER_FULLFILL_URI=`${BASE_URI}/orders/fullfill`
 
 export const MEALLIST_URI=`${BASE_URI}/meals`
