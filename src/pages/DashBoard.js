@@ -1,20 +1,16 @@
-import React, { Component } from 'react'
-import  {AdminNav} from "../components/NavAdmin"
+import React, { Component } from "react";
+import { AdminNav } from "../components/NavAdmin";
 
 export default class DashBoard extends Component {
   render() {
     return (
       <React.Fragment>
         <div className="">
-         <AdminNav />          
+          <AdminNav />
         </div>
-        <div className="">
-
-        </div>
-        <div className="container class">
-         {this.props.children}
-        </div>
+        <div className="" />
+        <div className="container class">{this.props.children}</div>
       </React.Fragment>
-    )
+    );
   }
 }

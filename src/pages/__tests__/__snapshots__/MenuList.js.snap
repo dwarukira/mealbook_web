@@ -108,7 +108,8 @@ exports[`The MenuList Component The MenuList  Should not regress 1`] = `
               onClick={[Function]}
               type="button"
             >
-              Add 
+              Add
+               
             </button>
           </div>
         </div>
@@ -212,7 +213,8 @@ exports[`The MenuList Component The MenuList  Should not regress 1`] = `
               onClick={[Function]}
               type="button"
             >
-              Add 
+              Add
+               
             </button>
           </div>
         </div>

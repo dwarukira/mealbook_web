@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The DashBoard Component should not regress 1`] = `
+Array [
+  <div
+    className=""
+>
+    <nav
+        className={undefined}
+    >
+        <div
+            className={undefined}
+        >
+            <a
+                className={undefined}
+                href="/"
+                onClick={[Function]}
+            >
+                Menu
+            </a>
+        </div>
+        <div
+            className={undefined}
+        >
+            <a
+                className={undefined}
+                href="/d"
+                onClick={[Function]}
+            >
+                Meals
+            </a>
+        </div>
+        <div
+            className={undefined}
+        >
+            <a
+                className={undefined}
+                href="/d/orders"
+                onClick={[Function]}
+            >
+                Orders
+            </a>
+        </div>
+        <div
+            className={undefined}
+        >
+            <a
+                className={undefined}
+                href="/d/dashboard"
+                onClick={[Function]}
+            >
+                Dashboard
+            </a>
+        </div>
+    </nav>
+</div>,
+  <div
+    className=""
+/>,
+  <div
+    className="container class"
+/>,
+]
+`;
