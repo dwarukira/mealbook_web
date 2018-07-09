@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
 import { AppRoutes , AuthRoutes, DashBoard} from "./routes"
 import { AuthRoute, AdminRoute } from './components/Auth';
 import { NotFound } from './pages/NotFound';
