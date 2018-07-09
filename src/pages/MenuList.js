@@ -7,7 +7,7 @@ import { addCart, remove, getMenu } from "../actions"
 
 import styles from "./css/menulist.css"
 
-class MenuList extends Component {
+export class MenuList extends Component {
   
   state = {
     meals:null
@@ -25,8 +25,6 @@ class MenuList extends Component {
   }
 
   render() {
-    console.log(this.props.menu.menu.menu_items);
-    
     if(this.props.menu.loading){
       return (<div> Loading... </div>)
     }

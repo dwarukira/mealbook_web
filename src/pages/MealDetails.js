@@ -6,7 +6,7 @@ import { MEAL_URI } from "../constants";
 import style from "./css/mealdetails.css";
 import { deleteMeal } from "../actions/meals";
 
-class MealDetails extends Component{
+export class MealDetails extends Component{
     state ={
         meal:this.props.meal ? this.props.meal: null,
         loading:false,
@@ -144,7 +144,7 @@ class MealDetails extends Component{
 }
 
 
-const mapStateToProps = (state, props) => {
+export const mapStateToProps = (state, props) => {
     if(props.match.params.id){
         return {
             meal:state.meals.meals.find(item=>item.id === props.match.params.id)

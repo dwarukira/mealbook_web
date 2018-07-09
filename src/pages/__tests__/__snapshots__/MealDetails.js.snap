@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Meal detail Component should not regress 1`] = `
+Array [
+  <div
+    className="card"
+>
+    <div
+        className="row"
+    >
+        <div
+            className="col-md-6 undefined"
+        >
+            <img
+                alt=""
+                className={undefined}
+                src="http://localhost:5000/uploads/ID_1.JPG"
+            />
+        </div>
+        <div
+            className="col-md-6"
+        >
+            <div
+                className={undefined}
+            >
+                <a
+                    className="btn btn-primary"
+                    href="/d/meal/edit/1"
+                    onClick={[Function]}
+                >
+                    Edit
+                </a>
+                <button
+                    className="btn btn-danger"
+                    data-target="#remove"
+                    data-toggle="modal"
+                >
+                    Remove
+                </button>
+            </div>
+            <table
+                className="table table-hover table-bordered"
+            >
+                <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Details
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            Cool
+                        </td>
+                    </tr>
+                    <tr
+                        className="active"
+                    >
+                        <td>
+                            Price
+                        </td>
+                        <td>
+                            10
+                        </td>
+                    </tr>
+                    <tr
+                        className="success"
+                    >
+                        <td>
+                            Date
+                        </td>
+                        <td>
+                            2018-7-8
+                        </td>
+                    </tr>
+                    <tr
+                        className="warning"
+                    >
+                        <td>
+                            Added by
+                        </td>
+                        <td>
+                            duncan
+                        </td>
+                    </tr>
+                    <tr
+                        className="danger"
+                    >
+                        <td>
+                            Orders
+                        </td>
+                        <td />
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>,
+  <div
+    aria-hidden="true"
+    aria-labelledby="#remove"
+    className="modal fade"
+    id="remove"
+    role="dialog"
+    tabIndex="-1"
+>
+    <div
+        className="modal-dialog modal-dialog-centered"
+        role="document"
+    >
+        <div
+            className="modal-content"
+        >
+            <div
+                className="modal-header"
+            >
+                <h5
+                    className="modal-title"
+                    id="exampleModalLongTitle"
+                >
+                    Are you sure you want to delete 
+                    Cool
+                    ?.
+                </h5>
+                <button
+                    aria-label="Close"
+                    className="close"
+                    data-dismiss="modal"
+                    type="button"
+                >
+                    <span
+                        aria-hidden="true"
+                    >
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div
+                class="modal-body"
+            >
+                Removing this meal my have side effects. Are you sure you want to continue.
+            </div>
+            <div
+                class="modal-footer"
+            >
+                <button
+                    className="btn btn-secondary"
+                    data-dismiss="modal"
+                    type="button"
+                >
+                    Close
+                </button>
+                <button
+                    className="btn btn-danger"
+                    onClick={[Function]}
+                    type="button"
+                >
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>,
+]
+`;

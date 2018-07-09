@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The MenuList Component The MenuList  Should not regress 1`] = `
+<div
+  className="columns undefined"
+>
+  <h4>
+    Meals
+  </h4>
+  <div
+    className={undefined}
+  >
+    <div
+      className="card undefined"
+    >
+      <img
+        alt=""
+        className="card-img-top"
+        src="http://localhost:5000/uploads/ID_1.JPG"
+      />
+      <div
+        className="card-body"
+      >
+        <h5
+          className="card-title"
+        >
+          Cool
+        </h5>
+        <p
+          className="card-text"
+        >
+          KSH 
+          10
+        </p>
+        <div>
+          <button
+            className="btn btn-primary"
+            data-target="#1"
+            data-toggle="modal"
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      aria-labelledby="#1"
+      className="modal fade"
+      id={1}
+      role="dialog"
+      tabIndex="-1"
+    >
+      <div
+        className="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="modal-header"
+          >
+            <h5
+              className="modal-title"
+              id="#1"
+            >
+              How many 
+              Cool
+               do you want?.
+            </h5>
+            <button
+              aria-label="Close"
+              className="close"
+              data-dismiss="modal"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            className="modal-body"
+          >
+            <input
+              name="quantiy"
+              onChange={[Function]}
+              type="number"
+              value={1}
+            />
+          </div>
+          <div
+            className="modal-footer"
+          >
+            <button
+              className="btn btn-secondary"
+              data-dismiss="modal"
+              type="button"
+            >
+              Close
+            </button>
+            <button
+              className="btn btn-primary"
+              data-dismiss="modal"
+              onClick={[Function]}
+              type="button"
+            >
+              Add 
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card undefined"
+    >
+      <img
+        alt=""
+        className="card-img-top"
+        src="http://localhost:5000/uploads/ID_2.JPG"
+      />
+      <div
+        className="card-body"
+      >
+        <h5
+          className="card-title"
+        >
+          test
+        </h5>
+        <p
+          className="card-text"
+        >
+          KSH 
+          10
+        </p>
+        <div>
+          <button
+            className="btn btn-primary"
+            data-target="#2"
+            data-toggle="modal"
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      aria-labelledby="#2"
+      className="modal fade"
+      id={2}
+      role="dialog"
+      tabIndex="-1"
+    >
+      <div
+        className="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="modal-header"
+          >
+            <h5
+              className="modal-title"
+              id="#2"
+            >
+              How many 
+              test
+               do you want?.
+            </h5>
+            <button
+              aria-label="Close"
+              className="close"
+              data-dismiss="modal"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            className="modal-body"
+          >
+            <input
+              name="quantiy"
+              onChange={[Function]}
+              type="number"
+              value={1}
+            />
+          </div>
+          <div
+            className="modal-footer"
+          >
+            <button
+              className="btn btn-secondary"
+              data-dismiss="modal"
+              type="button"
+            >
+              Close
+            </button>
+            <button
+              className="btn btn-primary"
+              data-dismiss="modal"
+              onClick={[Function]}
+              type="button"
+            >
+              Add 
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
