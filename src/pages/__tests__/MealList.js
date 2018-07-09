@@ -1,7 +1,7 @@
 import React from "react"
 import { mapStateToProps , MealList } from "../MealList"
-import { BrowserRouter as Router } from "react-router-dom";
-import  renderer from "react-test-renderer";
+import { BrowserRouter as Router } from "react-router-dom"
+import  renderer from "react-test-renderer"
 describe("The MealList Component", () => {
 
     describe(`mapStateToProps`, ()=> {

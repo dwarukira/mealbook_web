@@ -1,6 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import { BrowserRouter as Browser } from "react-router-dom";
+import { BrowserRouter as Browser } from "react-router-dom"
 import { MealDetails } from "../MealDetails"
 
 

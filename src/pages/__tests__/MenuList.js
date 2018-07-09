@@ -1,7 +1,7 @@
 import React from "react"
 import { MenuList } from "../MenuList"
-import { BrowserRouter as Router } from "react-router-dom";
-import  renderer from "react-test-renderer";
+import { BrowserRouter as Router } from "react-router-dom"
+import  renderer from "react-test-renderer"
 describe("The MenuList Component", () => {
 
     describe("The MenuList ", ()=>{

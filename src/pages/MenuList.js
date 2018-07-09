@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import { MenuItem } from '../components/MenuItem';
+import { MenuItem } from '../components/MenuItem'
 
 import { addCart, remove, getMenu } from "../actions"
 

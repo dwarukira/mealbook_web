@@ -8,7 +8,8 @@ class Details extends Component{
         total_orders:0,
         total_price:0,
         total_meals:0,
-        orders:[]
+        orders:[],
+        loading:false
     }
     componentWillMount(){
         let service = new API()
