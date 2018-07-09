@@ -34,7 +34,7 @@ export class Register extends Component {
         return (
             <div className="container">
                 <div className={`card mx-auto mt-5`}>
-                    <div className="card-header">Login</div>
+                    <div className="card-header">Register</div>
                     <div className="card-body">
 
                         <form onSubmit={this.handleSubmit} className="">

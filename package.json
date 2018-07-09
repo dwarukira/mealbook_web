@@ -42,7 +42,6 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-toastify": "^4.1.0",
-    "react-toastify-redux": "^1.0.0-rc.2",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "resolve": "1.6.0",
