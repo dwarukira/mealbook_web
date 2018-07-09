@@ -10,7 +10,6 @@ export const Meal = (props) => {
   //   props.delete(props.meal)
   // }
   const meal = props.meal
-  console.log(meal);
   
   return (
     <tr>

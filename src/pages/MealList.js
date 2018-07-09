@@ -6,7 +6,7 @@ import { getMeals, addMenu, deleteMeal } from '../actions/meals';
 import { Loader } from '../components/Loader';
 import { Meal } from '../components/Meal';
 
-class MealList extends Component {
+export class MealList extends Component {
   componentWillMount(){
     this.props.dispatch(getMeals())
   }
@@ -65,7 +65,7 @@ class MealList extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   meals:state.meals
 })
 
