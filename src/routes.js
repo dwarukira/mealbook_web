@@ -1,5 +1,5 @@
 import React  from "react"
-import { Route  } from "react-router-dom"
+import { Route } from "react-router-dom"
 import { App } from "./pages/App";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
@@ -20,14 +20,14 @@ export const DashBoard = (props) => {
     return (
         <React.Fragment>
             <DB>
-             <Route path={`${url}`} exact component={MealList}/>
-             <Route path={`${url}/meals/add`} exact component={AddMeal}/> 
-             <Route path={`${url}/meal/:id`} exact component={MealDetails}/> 
-             <Route path={`${url}/meal/edit/:id`} exact component={MealEdit}/>
-             <Route path={`${url}/menu`} exact component={MenuList}/> 
-             <Route path={`${url}/orders`} exact component={AdminOrders}/>
-             <Route path={`${url}/dashboard`} exact component={Details}/>
-
+                <Route path={`${url}`} exact component={MealList}/>
+                <Route path={`${url}/meals/add`} exact component={AddMeal}/> 
+                <Route path={`${url}/meal/:id`} exact component={MealDetails}/> 
+                <Route path={`${url}/meal/edit/:id`} exact component={MealEdit}/>
+                <Route path={`${url}/menu`} exact component={MenuList}/> 
+                <Route path={`${url}/orders`} exact component={AdminOrders}/>
+                <Route path={`${url}/dashboard`} exact component={Details}/>
+                
             </DB>
         </React.Fragment>
     )
@@ -42,8 +42,9 @@ export const AppRoutes = (props) => {
             <App>
                 <Route path={`${url}`} exact component={MenuList}/> 
                 <Route path={`${url}orders`} exact component={Orders}/>   
-                <Route path={`${url}orders/edit/:id/:meal_id`} exact component={EditOrder}/>      
-            </App>
+                <Route path={`${url}orders/edit/:id/:meal_id`} exact component={EditOrder}/>
+                
+            </App>  
         </React.Fragment>
     )
 }
@@ -51,12 +52,12 @@ export const AppRoutes = (props) => {
 
 export const AuthRoutes = (props) => {
     const { match } = props;
-    console.log(props);
     
     return (
         <div className="container">
             <Route path={`${match.url}/login`} exact component={Login} />
             <Route path={`${match.url}/register`} exact component={Register} />
+            
         </div>
     )
 }

@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import style from "./css/meal.css"
 
 export const Meal = (props) => {
   function addToMenu(){
     props.addmenu(props.meal)
   }
 
-  function deleteMeal(){
-    props.delete(props.meal)
-  }
+  // function deleteMeal(){
+  //   props.delete(props.meal)
+  // }
   const meal = props.meal
   console.log(meal);
   

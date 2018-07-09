@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { addMeal } from '../actions/meals';
 import { FILE_UPLOAD } from "../constants";
-import "./css/addmeal.css"
+import styles from "./css/addmeal.css"
 
 class AddMeal extends Component {
   state = {
@@ -68,12 +68,12 @@ class AddMeal extends Component {
           placeholder="Price"/>
       </div>
       <div className="img">
-        <img src={this.state.photo_url} alt="" className="rounded-circle" />
+        <img src={this.state.photo_url} alt="" className={`rounded-circle + ${styles.image}`}/>
       </div>
       <div className="form-group">
         <label htmlFor="photo">Photo</label>
         <input type="file" 
-          className="form-control" 
+          className={`form-control`}
           name="photo"
           onChange={this.uploadfiles}
           id="password" 

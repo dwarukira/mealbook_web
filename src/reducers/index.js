@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-
 import { orders, all_orders } from "./orders"
 import { meals , meal, addmeal} from "./meals";
 import { 
     FETCH_MENU_BEGIN, 
     FETCH_MENU_FAILURE, 
     FETCH_MENU_SUCCESS, 
-    REMOVE_CART} 
+    REMOVE_CART,
+    CLEAN_CART} 
     from "../actions/types";
 
 const cart = (state = [] , action) =>{
@@ -28,6 +28,9 @@ const cart = (state = [] , action) =>{
             }
 
             return state
+        case CLEAN_CART:
+            return []
+
         default:
             return state
     }
