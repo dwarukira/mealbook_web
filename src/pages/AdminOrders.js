@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import { getUserOrders , changeOrder, getOrders } from "../actions/order"
+import { ToastContainer, toast } from 'react-toastify';
+import {  changeOrder, getOrders } from "../actions/order"
 import { Order } from '../components/Order';
 import { API } from '../api';
 import { ORDER_FULLFILL_URI } from '../constants';
@@ -9,13 +9,14 @@ import { ORDER_FULLFILL_URI } from '../constants';
 
 
 class AdminOrders extends Component {
-
+  state = {
+    
+  }
   componentDidMount(){
     this.props.dispatch(getOrders())
   }
 
   fullfill = (id) => {
-      alert("HI")
       let service = new API()
       service.api(`${ORDER_FULLFILL_URI}/${id}`,{
           method:"PUT",
@@ -24,6 +25,7 @@ class AdminOrders extends Component {
           })
       }).then(data=>{
         this.props.dispatch(getOrders())
+        toast("Order fullfilled");
       }).catch(err=>{
           alert(err)
       })
@@ -47,6 +49,7 @@ class AdminOrders extends Component {
     return (
       <div className="row">
         {orders}   
+        <ToastContainer/>
       </div>
     )
   }

@@ -2,7 +2,8 @@ import {
     FETCH_MENU_BEGIN, 
     FETCH_MENU_SUCCESS, 
     FETCH_MENU_FAILURE,
-    REMOVE_CART } from "./types";
+    REMOVE_CART, 
+    CLEAN_CART} from "./types";
 import { API } from "../api";
 import { MENULIST_URI } from "../constants";
 
@@ -45,5 +46,12 @@ export const remove = (meal) => {
     return {
         type:REMOVE_CART,
         payload: {meal}
+    }
+}
+
+
+export const clean_cart = () => {
+    return {
+        type:CLEAN_CART,
     }
 }

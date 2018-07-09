@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import { API } from "../api"
-import { MENULIST_URI } from '../constants';
 import { MenuItem } from '../components/MenuItem';
 
 import { addCart, remove, getMenu } from "../actions"
 
 import styles from "./css/menulist.css"
-import { Cart } from '../components/Cart';
 
 class MenuList extends Component {
   
