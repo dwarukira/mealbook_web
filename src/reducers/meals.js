@@ -23,6 +23,7 @@ export const meals = (state=initalState, action) => {
 		case  FETCH_MEALS_BEGIN:
 			return {...state , loading: true, errors: null}
 		case FETCH_MEALS_SUCCESS:
+			
 			return {...state, loading:false, meals:action.payload.meals.meals}
 		case FETCH_MEALS_FAILURE:
 			return {...state , loading:false, errors:action.payload}

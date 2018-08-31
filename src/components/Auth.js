@@ -2,7 +2,7 @@ import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { API } from "../api";
 
-export const AuthRoute = ({ component: Component, ...rest })  => {
+export const AuthRoute = ({ component: Component, ...rest }) => {
     let service = new API()
 
     return (
@@ -15,7 +15,7 @@ export const AuthRoute = ({ component: Component, ...rest })  => {
 }
 
 
-export const AdminRoute = ({ component: Component, ...rest })  => {
+export const AdminRoute = ({ component: Component, ...rest }) => {
     let service = new API()
 
     return (

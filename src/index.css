@@ -1,13 +1,13 @@
-:root{
-  --primary-color:#20ac76;
+:root {
+  --primary-color: #20ac76;
 }
 
-.card{
+.card {
   padding-right: 15px;
   padding-left: 15px;
   margin: 100px;
 }
 
-.time{
+.time {
   display: flex;
 }
